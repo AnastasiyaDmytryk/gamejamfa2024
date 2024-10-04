@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ihnc80c1w7a4"]
+
+[ext_resource type="PackedScene" uid="uid://or3gbsgn18c3" path="res://Terrains/Room1.tscn" id="1_jsael"]
+[ext_resource type="PackedScene" uid="uid://ba5iykvmxjoj1" path="res://Terrains/PlayerScene.tscn" id="2_2sntf"]
+[ext_resource type="PackedScene" uid="uid://do50im0bqdyth" path="res://Terrains/door.tscn" id="3_rakxu"]
+
+[node name="Node2D" instance=ExtResource("1_jsael")]
+script = null
+
+[node name="CharacterBody2D" parent="." index="1" instance=ExtResource("2_2sntf")]
+position = Vector2(7, 60)
+scale = Vector2(0.33593, 0.405154)
+
+[node name="Door" parent="." index="2" instance=ExtResource("3_rakxu")]
+position = Vector2(253, 74)
+scale = Vector2(0.72, 0.600001)

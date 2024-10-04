@@ -194,5 +194,4 @@ texture = ExtResource("1_ch11n")
 
 [resource]
 physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_cc2cx")

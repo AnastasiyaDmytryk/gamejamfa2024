@@ -7,7 +7,7 @@ extends CharacterBody2D
 var direction: Vector2 = Vector2()
 var is_attacking: bool = false
 var attack_timer: float = 0.0
-var status
+
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -54,8 +54,7 @@ func handle_attack(delta):
 		animated_sprite.play("attack") 
 		velocity = Vector2()  
 
-func _process(delta: float) -> void:
-	status = GlobalRooms.reswapn
+
 
 func _physics_process(delta: float):
 	handle_attack(delta)  

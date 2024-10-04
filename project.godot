@@ -25,6 +25,14 @@ GlobalRooms="*res://Scripts/globalRooms.gd"
 
 version_control/autoload_on_startup=true
 
+[autoload]
+
+GlobalRooms="*res://Scripts/globalRooms.gd"
+
+[editor]
+
+version_control/autoload_on_startup=true
+
 [input]
 
 attack={

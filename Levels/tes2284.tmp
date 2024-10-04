@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://clkwjxhoyleqj"]
+[gd_scene load_steps=14 format=4 uid="uid://clkwjxhoyleqj"]
 
 [ext_resource type="Texture2D" uid="uid://b4vgj6w6j2tm6" path="res://Art/Other/TX Tileset Grass.png" id="1_uwadr"]
 [ext_resource type="PackedScene" uid="uid://tx3t7df4atb4" path="res://Levels/player.tscn" id="2_m62xx"]
@@ -6,7 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/interact.gd" id="4_bna2w"]
 [ext_resource type="Texture2D" uid="uid://bttq864rgmrf1" path="res://Art/paper.png" id="4_o4ld2"]
 [ext_resource type="PackedScene" uid="uid://dnsig0t8xjtlg" path="res://Levels/GUI.tscn" id="4_ocdda"]
-[ext_resource type="PackedScene" uid="uid://do50im0bqdyth" path="res://Terrains/door.tscn" id="7_ik3li"]
+[ext_resource type="Texture2D" uid="uid://buvc3xb18sqir" path="res://Textures/door-removebg-preview.png" id="7_084gx"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="8_qryl7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fypli"]
 texture = ExtResource("1_uwadr")
@@ -635,6 +636,9 @@ sources/1 = SubResource("TileSetAtlasSource_np5e2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_moy0n"]
 size = Vector2(20, 28)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsoyh"]
+size = Vector2(36, 64)
+
 [node name="TestLevel" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -663,5 +667,14 @@ texture = ExtResource("4_o4ld2")
 position = Vector2(-80, 64)
 shape = SubResource("RectangleShape2D_moy0n")
 
-[node name="Door" parent="." instance=ExtResource("7_ik3li")]
-position = Vector2(348, 92)
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+position = Vector2(393, 83)
+scale = Vector2(0.501852, 0.693333)
+texture = ExtResource("7_084gx")
+script = ExtResource("8_qryl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(389, 76)
+shape = SubResource("RectangleShape2D_vsoyh")

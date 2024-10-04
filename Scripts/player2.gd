@@ -54,8 +54,8 @@ func handle_attack(delta):
 		animated_sprite.play("attack") 
 		velocity = Vector2()  
 
-#func _process(delta: float) -> void:
-	#status = GlobalRooms.reswapn
+func _process(delta: float) -> void:
+	status = GlobalRooms.reswapn
 
 func _physics_process(delta: float):
 	handle_attack(delta)  

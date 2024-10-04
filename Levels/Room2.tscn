@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://vn42a138ix75"]
+
+[ext_resource type="PackedScene" uid="uid://clkwjxhoyleqj" path="res://Levels/test_level.tscn" id="1_wtrmf"]
+
+[node name="TestLevel" instance=ExtResource("1_wtrmf")]
+
+[node name="TileMapLayer" parent="." index="0"]
+position = Vector2(-13, -2)
+
+[node name="Door" parent="." index="2"]
+position = Vector2(388, 103)

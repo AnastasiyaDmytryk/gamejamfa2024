@@ -3,13 +3,9 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-<<<<<<< Updated upstream
-	pass
-=======
 	print("powerup");
 	
 
->>>>>>> Stashed changes
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -21,15 +17,6 @@ func _enter_tree() -> void:
 		position.x=randf_range(0,40);
 		position.y=randf_range(0,40);
 
-<<<<<<< Updated upstream
-	
-func _on_body_entered(body: Node2D) -> void:
-	print("Power up touched");
-	#disapear
-	#spawn enemy or power up randomly 
-	
-	pass # Replace with function body.
-=======
 
 func getRandomLoadable():
 	
@@ -55,4 +42,3 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 
 	
 	#disapear
->>>>>>> Stashed changes

@@ -1,6 +1,4 @@
 extends CharacterBody2D
-<<<<<<< Updated upstream
-=======
 func _ready() -> void:
 	print("powerup");
 
@@ -26,4 +24,3 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	getRandomLoadable().instantiate()
 	#disapear
->>>>>>> Stashed changes

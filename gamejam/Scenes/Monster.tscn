@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=3 uid="uid://bpt021leakrw4"]
+
+[ext_resource type="Script" path="res://Script/monster.gd" id="1_qnbnb"]
+[ext_resource type="Texture2D" uid="uid://lajbm40gcyec" path="res://Sprites/slime_green.png" id="1_y2sqg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nc4u"]
+atlas = ExtResource("1_y2sqg")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sbww"]
+atlas = ExtResource("1_y2sqg")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxcun"]
+atlas = ExtResource("1_y2sqg")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36ixf"]
+atlas = ExtResource("1_y2sqg")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgw1j"]
+atlas = ExtResource("1_y2sqg")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byg52"]
+atlas = ExtResource("1_y2sqg")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74dqi"]
+atlas = ExtResource("1_y2sqg")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amo3g"]
+atlas = ExtResource("1_y2sqg")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_je12l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nc4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sbww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxcun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36ixf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgw1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byg52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74dqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amo3g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h8y3e"]
+radius = 5.0
+
+[node name="Monster" type="Node2D"]
+position = Vector2(62, 55)
+rotation = 1.5708
+scale = Vector2(2, 2)
+script = ExtResource("1_qnbnb")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-5.5, 2.40747e-07)
+rotation = -1.56207
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_je12l")
+autoplay = "default"
+frame = 5
+frame_progress = 0.479635
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_h8y3e")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

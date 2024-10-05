@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcutpi5n1jgud"]
+
+[ext_resource type="Texture2D" uid="uid://dgfsxvo4hs1b8" path="res://Art/Chiken.webp" id="1_6f1ss"]
+[ext_resource type="Script" path="res://Enemys/chiken.gd" id="1_6sivl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nkvv"]
+size = Vector2(51, 29.8474)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_6sivl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0810168, 0.0852193)
+texture = ExtResource("1_6f1ss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 10.4193)
+scale = Vector2(1, 2.12989)
+shape = SubResource("RectangleShape2D_5nkvv")

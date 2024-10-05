@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://bog0igdd3n4gv"]
+
+[ext_resource type="Texture2D" uid="uid://dl7xdoukfpg87" path="res://Sprites/spit.png" id="1_15gkj"]
+[ext_resource type="Script" path="res://Script/spit_bullet.gd" id="1_sxgbx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmgx8"]
+atlas = ExtResource("1_15gkj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02788"]
+atlas = ExtResource("1_15gkj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv82j"]
+atlas = ExtResource("1_15gkj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_obrrf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmgx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02788")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv82j")
+}],
+"loop": true,
+"name": &"Spit",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3bs03"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eefsi"]
+radius = 12.0
+
+[node name="SpitBullet" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_sxgbx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_obrrf")
+animation = &"Spit"
+frame = 2
+frame_progress = 0.811309
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_3bs03")
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_eefsi")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]

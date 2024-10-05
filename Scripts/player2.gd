@@ -3,11 +3,16 @@ extends CharacterBody2D
 
 @export var speed: float = 200
 @export var attack_duration: float = 0.5  
+@export var knowckbackPower: int = 1500
 
 var direction: Vector2 = Vector2()
 var is_attacking: bool = false
 var attack_timer: float = 0.0
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -54,8 +59,20 @@ func handle_attack(delta):
 		animated_sprite.play("attack") 
 		velocity = Vector2()  
 
+<<<<<<< Updated upstream
 
+=======
+func knockback(enemyVelocity: Vector2):
+	var knockbackDirection = (enemyVelocity - velocity).normalized() * knowckbackPower
+	velocity = knockbackDirection
+	move_and_slide()
+>>>>>>> Stashed changes
 
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	if area.name == "hitBox":
+		knockback(area.get_parent().velocity)
+		print_debug(area.get_parent().name)
+		
 func _physics_process(delta: float):
 	handle_attack(delta)  
 

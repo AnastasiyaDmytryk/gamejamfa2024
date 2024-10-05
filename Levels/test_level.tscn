@@ -7,7 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://bttq864rgmrf1" path="res://Art/paper.png" id="4_o4ld2"]
 [ext_resource type="PackedScene" uid="uid://dnsig0t8xjtlg" path="res://Levels/GUI.tscn" id="4_ocdda"]
 [ext_resource type="PackedScene" uid="uid://do50im0bqdyth" path="res://Terrains/door.tscn" id="7_ik3li"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://dlk0ca4sb11dl" path="res://Terrains/PowerUpRed.tscn" id="8_rvcfw"]
+=======
+[ext_resource type="PackedScene" uid="uid://cyvn0ooowqg5y" path="res://Terrains/PowerUpRed.tscn" id="8_rvcfw"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fypli"]
 texture = ExtResource("1_uwadr")
@@ -644,6 +648,8 @@ tile_set = SubResource("TileSet_proj7")
 
 [node name="Player" parent="." instance=ExtResource("2_m62xx")]
 position = Vector2(41, 96)
+collision_layer = 257
+collision_mask = 257
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
@@ -669,3 +675,9 @@ position = Vector2(348, 93)
 
 [node name="PowerUp" parent="." instance=ExtResource("8_rvcfw")]
 position = Vector2(140, -19)
+<<<<<<< Updated upstream
+=======
+scale = Vector2(1.62184, 1.40237)
+collision_layer = 256
+collision_mask = 256
+>>>>>>> Stashed changes

@@ -23,11 +23,20 @@ func _on_body_entered(body):
 	if not GlobalRooms.scenCnaged:
 		GlobalRooms.scenCnaged=true;
 		call_deferred("change_scene_to_random_room")
+<<<<<<< Updated upstream
 func change_scene_to_random_room():
 	GlobalRooms.currentScene= getRandomRoom()
 	remove_child(current_scene)
 	get_tree().change_scene_to_file(GlobalRooms.currentScene)
 	GlobalRooms.scenCnaged = false 
+=======
+		
+func change_scene_to_random_room():
+	print(get_tree)
+	get_tree().change_scene_to_file(getRandomRoom())
+	GlobalRooms.scenCnaged = false 
+	GlobalRooms.enemiesOnScreen=0
+>>>>>>> Stashed changes
 	
 	
 	

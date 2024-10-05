@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=4 uid="uid://cpsmtd4qyd5is"]
+
+[ext_resource type="Script" path="res://Scenes/room_6.gd" id="1_0nsdu"]
+[ext_resource type="TileSet" uid="uid://cnl8lb0t7syk3" path="res://Scenes/Floor.tres" id="2_45wm6"]
+[ext_resource type="PackedScene" uid="uid://cpg3lyodpu3vh" path="res://temp_player.tscn" id="2_u1e7y"]
+[ext_resource type="PackedScene" uid="uid://v48nd8li4gty" path="res://Scenes/boundary.tscn" id="3_xxkhs"]
+[ext_resource type="PackedScene" uid="uid://do50im0bqdyth" path="res://Terrains/door.tscn" id="4_3ppg5"]
+[ext_resource type="PackedScene" uid="uid://cyvn0ooowqg5y" path="res://Terrains/PowerUpRed.tscn" id="5_vqdjk"]
+
+[node name="Room6" type="Node2D"]
+position = Vector2(23, -29)
+script = ExtResource("1_0nsdu")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAwABAAEAAAABAAAAAwABAAEAAAACAAAAAwACAAEAAGADAAAAAwAAAAEAAAAEAAAAAwABAAEAAAAFAAAAAwABAAEAAAAGAAAAAwABAAEAAAAHAAAAAwACAAEAAGAIAAAAAwABAAEAAAAJAAAAAwABAAEAAAAJAAEAAwACAAEAAAAJAAIAAwABAAEAAAAJAAMAAwAAAAEAAAAIAAMAAwABAAEAAAAHAAMAAwAAAAEAAAAGAAMAAwABAAEAAAAFAAMAAwABAAEAAAAEAAMAAwACAAEAAFADAAMAAwABAAEAAAACAAMAAwABAAEAAAABAAMAAwAAAAEAAAAAAAMAAwAAAAEAAAAAAAIAAwACAAEAADAAAAEAAwAAAAEAAAABAAEAAwABAAEAAAACAAEAAwABAAEAAAADAAEAAwABAAEAAAAEAAEAAwABAAEAAAAFAAEAAwABAAEAAAAGAAEAAwAAAAEAAAAHAAEAAwABAAEAAAAIAAEAAwABAAEAAAAIAAIAAwABAAEAAAAHAAIAAwAAAAEAAAAGAAIAAwAAAAEAAAAFAAIAAwAAAAEAAAAEAAIAAwAAAAEAAAADAAIAAwAAAAEAAAACAAIAAwABAAEAAAABAAIAAwAAAAEAAAA=")
+tile_set = ExtResource("2_45wm6")
+
+[node name="Boundary" parent="." instance=ExtResource("3_xxkhs")]
+position = Vector2(-31, 33)
+
+[node name="TEMP_PLAYER" parent="." instance=ExtResource("2_u1e7y")]
+position = Vector2(158, 63)
+collision_layer = 257
+collision_mask = 257
+
+[node name="Door" parent="." instance=ExtResource("4_3ppg5")]
+position = Vector2(338, 75)
+collision_layer = 256
+collision_mask = 256
+
+[node name="PowerUpRed" parent="." instance=ExtResource("5_vqdjk")]
+position = Vector2(65, 60)

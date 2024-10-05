@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=4 uid="uid://convoj6s7ftiy"]
+
+[ext_resource type="TileSet" uid="uid://cnl8lb0t7syk3" path="res://Scenes/Floor.tres" id="1_stbwg"]
+[ext_resource type="PackedScene" uid="uid://v48nd8li4gty" path="res://Scenes/boundary.tscn" id="2_52d1k"]
+[ext_resource type="PackedScene" uid="uid://cpg3lyodpu3vh" path="res://Scenes/temp_player.tscn" id="3_87mdf"]
+
+[node name="Room8" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAIAAwADAAIAAAABAAEACgAAAAAAAAACAAIACgAAAAAAAAABAP//CgAAAAAAAAACAAAACgAAAAAAAAADAAEACgAAAAAAAAAEAAIACgAAAAAAAAADAP//CgAAAAAAAAAEAAAACgAAAAAAAAAFAAEAAwACAAIAADAGAAIACgAAAAAAAAAFAP//CgAAAAAAAAAGAAAACgAAAAAAAAAHAAEACgAAAAAAAAAIAAIACgAAAAAAAAAHAP//AwACAAIAAGAIAAAACgAAAAAAAAAJAAEACgAAAAAAAAAKAAIAAwACAAIAAFAJAP//CgAAAAAAAAAKAAAACgAAAAAAAAABAAAAAwACAAIAADACAAEAAwADAAIAAAADAAIAAwADAAIAAAACAP//AwADAAIAAAADAAAAAwADAAIAAAAEAAEAAwADAAIAAAAFAAIAAwADAAIAAAAEAP//AwADAAIAAAAFAAAAAwADAAIAAAAGAAEAAwADAAIAAAAHAAIAAwADAAIAAAAGAP//AwADAAIAAAAHAAAAAwADAAIAAAAIAAEAAwADAAIAAAAJAAIAAwADAAIAAAAIAP//AwADAAIAAAAJAAAAAwADAAIAAAAKAAEAAwADAAIAAAAKAP//AwADAAIAAAA=")
+tile_set = ExtResource("1_stbwg")
+
+[node name="Boundary" parent="." instance=ExtResource("2_52d1k")]
+position = Vector2(2, 2)
+
+[node name="TEMP_PLAYER" parent="." instance=ExtResource("3_87mdf")]
+position = Vector2(173, 34)

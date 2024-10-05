@@ -4,7 +4,11 @@
 [ext_resource type="TileSet" uid="uid://b0cghyae56im0" path="res://Textures/tyr_tiel.tres" id="1_k3f03"]
 [ext_resource type="PackedScene" uid="uid://ba5iykvmxjoj1" path="res://Terrains/PlayerScene.tscn" id="2_gkcu5"]
 [ext_resource type="PackedScene" uid="uid://do50im0bqdyth" path="res://Terrains/door.tscn" id="3_xyllm"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://dlk0ca4sb11dl" path="res://Terrains/PowerUpRed.tscn" id="5_6kvmp"]
+=======
+[ext_resource type="PackedScene" uid="uid://cyvn0ooowqg5y" path="res://Terrains/PowerUpRed.tscn" id="5_6kvmp"]
+>>>>>>> Stashed changes
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_eg7lx")

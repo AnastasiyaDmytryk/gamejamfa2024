@@ -16,4 +16,3 @@ position = Vector2(-31, 33)
 
 [node name="TEMP_PLAYER" parent="." instance=ExtResource("2_u1e7y")]
 position = Vector2(158, 63)
-script = null

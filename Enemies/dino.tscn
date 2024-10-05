@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://rx1tmd5k88sd"]
+
+[ext_resource type="Texture2D" uid="uid://bw7ja36rfj747" path="res://Art/newArt/bossDino.png" id="1_354h5"]
+[ext_resource type="Script" path="res://Enemies/dino.gd" id="1_wb5gs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m6m7w"]
+radius = 35.562
+height = 142.986
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_habjk"]
+radius = 27.1926
+height = 126.054
+
+[node name="dino" type="CharacterBody2D"]
+script = ExtResource("1_wb5gs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -77)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_354h5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-28, -72)
+rotation = -0.71733
+shape = SubResource("CapsuleShape2D_m6m7w")
+
+[node name="hitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
+position = Vector2(-30, -70)
+rotation = -0.71733
+shape = SubResource("CapsuleShape2D_habjk")

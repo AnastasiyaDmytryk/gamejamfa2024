@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ihnc80c1w7a4"]
+
+[ext_resource type="PackedScene" uid="uid://or3gbsgn18c3" path="res://Terrains/Room1.tscn" id="1_jsael"]
+
+[node name="Node2D2" instance=ExtResource("1_jsael")]

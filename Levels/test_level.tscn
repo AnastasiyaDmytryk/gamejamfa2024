@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://clkwjxhoyleqj"]
+[gd_scene load_steps=19 format=4 uid="uid://clkwjxhoyleqj"]
 
 [ext_resource type="Texture2D" uid="uid://b4vgj6w6j2tm6" path="res://Art/Other/TX Tileset Grass.png" id="1_uwadr"]
 [ext_resource type="PackedScene" uid="uid://tx3t7df4atb4" path="res://Levels/player.tscn" id="2_m62xx"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://rx1tmd5k88sd" path="res://Enemies/dino.tscn" id="9_54w5j"]
 [ext_resource type="Script" path="res://Levels/healthBarTexture.gd" id="10_nr68k"]
 [ext_resource type="Texture2D" uid="uid://d2ba4u5s0gslw" path="res://Art/heart.png" id="11_838c7"]
+[ext_resource type="Texture2D" uid="uid://8yf3gt4nyd65" path="res://Art/GUI/energy_bar_bg.png" id="12_j810n"]
+[ext_resource type="Texture2D" uid="uid://cath8lwiiyo1c" path="res://Art/GUI/energy_bar_fill.png" id="13_4oosn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fypli"]
 texture = ExtResource("1_uwadr")
@@ -693,6 +695,11 @@ player = NodePath("../../../Player")
 position = Vector2(-22, 29)
 scale = Vector2(2, 2)
 texture = ExtResource("11_838c7")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+texture_under = ExtResource("12_j810n")
+texture_progress = ExtResource("13_4oosn")
 
 [node name="dino" parent="." instance=ExtResource("9_54w5j")]
 position = Vector2(228, 245)

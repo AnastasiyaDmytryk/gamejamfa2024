@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bttq864rgmrf1" path="res://Art/paper.png" id="4_o4ld2"]
 [ext_resource type="PackedScene" uid="uid://dnsig0t8xjtlg" path="res://Levels/GUI.tscn" id="4_ocdda"]
 [ext_resource type="PackedScene" uid="uid://do50im0bqdyth" path="res://Terrains/door.tscn" id="7_ik3li"]
-[ext_resource type="PackedScene" uid="uid://cyvn0ooowqg5y" path="res://Terrains/PowerUpRed.tscn" id="8_rvcfw"]
+[ext_resource type="PackedScene" path="res://Terrains/PowerUpRed.tscn" id="8_rvcfw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fypli"]
 texture = ExtResource("1_uwadr")

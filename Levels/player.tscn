@@ -167,7 +167,7 @@ animations = [{
 radius = 8.0
 height = 44.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_2b72c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -181,3 +181,5 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_uy7vq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

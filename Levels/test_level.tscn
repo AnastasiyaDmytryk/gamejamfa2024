@@ -1,12 +1,19 @@
-[gd_scene load_steps=12 format=4 uid="uid://clkwjxhoyleqj"]
+[gd_scene load_steps=19 format=4 uid="uid://clkwjxhoyleqj"]
 
 [ext_resource type="Texture2D" uid="uid://b4vgj6w6j2tm6" path="res://Art/Other/TX Tileset Grass.png" id="1_uwadr"]
 [ext_resource type="PackedScene" uid="uid://tx3t7df4atb4" path="res://Levels/player.tscn" id="2_m62xx"]
 [ext_resource type="Texture2D" uid="uid://b5uoqh0320g0n" path="res://Art/Other/TX Props.png" id="2_ve5vx"]
 [ext_resource type="Script" path="res://Scripts/interact.gd" id="4_bna2w"]
 [ext_resource type="Texture2D" uid="uid://bttq864rgmrf1" path="res://Art/paper.png" id="4_o4ld2"]
-[ext_resource type="PackedScene" uid="uid://dnsig0t8xjtlg" path="res://Levels/GUI.tscn" id="4_ocdda"]
 [ext_resource type="PackedScene" uid="uid://do50im0bqdyth" path="res://Terrains/door.tscn" id="7_ik3li"]
+[ext_resource type="Script" path="res://Levels/healthBar.gd" id="8_byp83"]
+[ext_resource type="Texture2D" uid="uid://c3ma1cxkpk78x" path="res://Art/GUI/lifebar_bg.png" id="8_cido3"]
+[ext_resource type="Texture2D" uid="uid://bqhi242d55yjw" path="res://Art/GUI/lifebar_fill.png" id="9_6i8oc"]
+[ext_resource type="PackedScene" uid="uid://rx1tmd5k88sd" path="res://Enemies/dino.tscn" id="9_54w5j"]
+[ext_resource type="Script" path="res://Levels/healthBarTexture.gd" id="10_nr68k"]
+[ext_resource type="Texture2D" uid="uid://d2ba4u5s0gslw" path="res://Art/heart.png" id="11_838c7"]
+[ext_resource type="Texture2D" uid="uid://8yf3gt4nyd65" path="res://Art/GUI/energy_bar_bg.png" id="12_j810n"]
+[ext_resource type="Texture2D" uid="uid://cath8lwiiyo1c" path="res://Art/GUI/energy_bar_fill.png" id="13_4oosn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fypli"]
 texture = ExtResource("1_uwadr")
@@ -646,12 +653,6 @@ position = Vector2(41, 96)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="Gui" parent="Player/Camera2D" instance=ExtResource("4_ocdda")]
-offset_left = -566.0
-offset_top = -317.0
-offset_right = -22.0
-offset_bottom = -224.0
-
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("4_bna2w")
 
@@ -665,3 +666,40 @@ shape = SubResource("RectangleShape2D_moy0n")
 
 [node name="Door" parent="." instance=ExtResource("7_ik3li")]
 position = Vector2(348, 92)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 43.0
+offset_top = 1.0
+offset_right = 439.0
+offset_bottom = 54.0
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/VBoxContainer" node_paths=PackedStringArray("player")]
+visible = false
+layout_mode = 2
+step = 1.0
+value = 100.0
+script = ExtResource("8_byp83")
+player = NodePath("../../../Player")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/VBoxContainer" node_paths=PackedStringArray("player")]
+layout_mode = 2
+value = 100.0
+texture_under = ExtResource("8_cido3")
+texture_progress = ExtResource("9_6i8oc")
+script = ExtResource("10_nr68k")
+player = NodePath("../../../Player")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(-22, 29)
+scale = Vector2(2, 2)
+texture = ExtResource("11_838c7")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+texture_under = ExtResource("12_j810n")
+texture_progress = ExtResource("13_4oosn")
+
+[node name="dino" parent="." instance=ExtResource("9_54w5j")]
+position = Vector2(228, 245)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=4 uid="uid://cpsmtd4qyd5is"]
 
-[ext_resource type="TileSet" uid="uid://bqr5mahlsumd7" path="res://Floor (2).tres" id="2_45wm6"]
-[ext_resource type="PackedScene" path="res://temp_player.tscn" id="2_u1e7y"]
-[ext_resource type="PackedScene" path="res://boundary.tscn" id="3_xxkhs"]
+[ext_resource type="TileSet" uid="uid://cnl8lb0t7syk3" path="res://Scenes/Floor.tres" id="2_45wm6"]
+[ext_resource type="PackedScene" uid="uid://cpg3lyodpu3vh" path="res://Scenes/temp_player.tscn" id="2_u1e7y"]
+[ext_resource type="PackedScene" uid="uid://v48nd8li4gty" path="res://Scenes/boundary.tscn" id="3_xxkhs"]
 
 [node name="Room6" type="Node2D"]
 position = Vector2(23, -29)

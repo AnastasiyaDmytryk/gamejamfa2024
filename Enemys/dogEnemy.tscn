@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq8axv0x3a2oq"]
+
+[ext_resource type="Script" path="res://Enemys/dog_enemy.gd" id="1_81tja"]
+[ext_resource type="Texture2D" uid="uid://decchrtm7k7t" path="res://Art/dog.webp" id="1_gpmir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vh6l7"]
+size = Vector2(22.2103, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4j0u"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_81tja")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.159998, 0.12)
+texture = ExtResource("1_gpmir")
+
+[node name="hitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
+position = Vector2(9.41309, 0)
+scale = Vector2(8.51738, 5.41824)
+shape = SubResource("RectangleShape2D_vh6l7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t4j0u")
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
+[connection signal="body_entered" from="hitBox" to="." method="_on_area_2d_body_entered"]
+[connection signal="tree_exiting" from="hitBox/CollisionShape2D" to="." method="_on_collision_shape_2d_tree_exiting"]

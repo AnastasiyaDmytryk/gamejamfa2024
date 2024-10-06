@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtfxhaup7vn11"]
+
+[ext_resource type="Script" path="res://Collectibles/Interactionarea/interaction_manager.gd" id="1_w7jrq"]
+
+[node name="interactionManager" type="Node2D"]
+light_mask = 17
+visibility_layer = 17
+scale = Vector2(1.44792, 3.00923)
+script = ExtResource("1_w7jrq")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.917123, 0.481595)
+text = "[E] to collect
+"

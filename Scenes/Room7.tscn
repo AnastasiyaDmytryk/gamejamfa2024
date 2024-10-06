@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=4 uid="uid://ccy1osueoac7n"]
+
+[ext_resource type="TileSet" uid="uid://cnl8lb0t7syk3" path="res://Scenes/Floor.tres" id="1_f7v68"]
+[ext_resource type="PackedScene" uid="uid://v48nd8li4gty" path="res://Scenes/boundary.tscn" id="2_1qnpu"]
+[ext_resource type="PackedScene" uid="uid://cpg3lyodpu3vh" path="res://temp_player.tscn" id="3_sqabe"]
+
+[node name="Room7" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAP//AwADAAEAAAAAAAAAAwADAAEAAAABAAAAAwADAAEAAAABAAEAAwAAAAIAAAAAAAEAAwADAAEAAAAAAAIAAwADAAEAAAABAAIAAwADAAEAAAACAAIAAwADAAEAAAADAAIAAwADAAEAAAAEAAIAAwADAAEAAAAFAAIAAwAAAAIAAAAGAAIAAwADAAEAAAAHAAIAAwADAAEAAAAIAAIAAwADAAEAAAAJAAIAAwADAAEAAAAJAAEAAwADAAEAAAAKAAEAAwADAAEAAAAKAAIAAwADAAEAAAAKAAAAAwADAAEAAAAJAAAAAwADAAEAAAAJAP//AwADAAEAAAAKAP//AwADAAEAAAAIAP//AwAAAAIAAAAHAP//AwADAAEAAAAGAP//AwADAAEAAAAFAP//AwADAAEAAAAEAP//AwADAAEAAAADAP//AwADAAEAAAACAP//AwAAAAIAAAABAP//AwADAAEAAAACAAAAAwADAAEAAAADAAAAAwADAAEAAAAEAAAAAwADAAEAAAAFAAAAAwADAAEAAAAGAAAAAwAAAAIAAAAHAAAAAwADAAEAAAAIAAAAAwADAAEAAAAIAAEAAwAAAAIAAAAHAAEAAwADAAEAAAAGAAEAAwAAAAIAAAAFAAEAAwADAAEAAAAEAAEAAwADAAEAAAADAAEAAwADAAEAAAACAAEAAwADAAEAAAA=")
+tile_set = ExtResource("1_f7v68")
+
+[node name="Boundary" parent="." instance=ExtResource("2_1qnpu")]
+position = Vector2(0, -1)
+
+[node name="TEMP_PLAYER" parent="." instance=ExtResource("3_sqabe")]
+position = Vector2(144, 27)

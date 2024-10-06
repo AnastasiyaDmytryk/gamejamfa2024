@@ -1,4 +1,3 @@
-
 extends CharacterBody2D
 
 
@@ -10,6 +9,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 		
-func _enter_tree() -> void:
-	if GlobalRooms.scenCnaged:
-		queue_free()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	queue_free()

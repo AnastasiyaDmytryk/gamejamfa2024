@@ -1,6 +1,6 @@
 extends ProgressBar
 
-@export var player: Player
+@onready var player= get_tree().get_first_node_in_group("player")
 
 func _ready():
 	player.healthChanged.connect(self.update)

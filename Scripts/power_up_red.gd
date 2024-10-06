@@ -3,7 +3,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("powerup");
+	pass
 	
 
 
@@ -20,24 +20,34 @@ func _enter_tree() -> void:
 
 func getRandomLoadable():
 	
-	var i = randi() % GlobalRooms.lodables.size()
-	var path = GlobalRooms.lodables[i]
+	var i = randi() % GlobalRooms.lodable.size()
+	var path = GlobalRooms.lodable[i]
 	var resource = load(path)
 	return resource
-
-		
 	
+func getRandomEnemy():
 	
-	
-
+	var i = randi() % GlobalRooms.enemy.size()
+	var path = GlobalRooms.enemy[i]
+	var resource = load(path)
+	return resource
 	
 func _on_body_entered(body: CharacterBody2D) -> void:
-	var n = randf_range(0,2)
+	var n = randf_range(0,1)
+	var n2 = randf_range(0,1)
+	
 	if GlobalRooms.enemiesOnScreen < n : 
-		var loadable = getRandomLoadable()
-		var instance = loadable.instantiate()
-		get_tree().root.add_child(instance)
+		var enemy = getRandomEnemy()
+		var instance1 = enemy.instantiate()
+		get_tree().root.add_child(instance1)
 		GlobalRooms.enemiesOnScreen+=1
+		
+	if GlobalRooms.lodablesOnScreen < n2:
+		var loadable = getRandomLoadable()
+		var instance2 = loadable.instantiate()
+		get_tree().root.add_child(instance2)
+		GlobalRooms.lodablesOnScreen+=1
+		
 	hide()
 
 	

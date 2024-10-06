@@ -1,6 +1,6 @@
 extends TextureProgressBar
 
-@export var player: Player
+@onready var player= get_node("res://Levels/player.gd")
 
 func _ready():
 	player.healthChanged.connect(self.update)

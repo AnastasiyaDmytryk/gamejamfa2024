@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckeujrgcy0tn7"]
+
+[ext_resource type="Texture2D" uid="uid://durxq0tc1aciq" path="res://Art/coffeeCup.png" id="1_fom2c"]
+[ext_resource type="Script" path="res://animated_sprite_2d.gd" id="2_ygntf"]
+[ext_resource type="PackedScene" uid="uid://df34ttetymad8" path="res://Collectibles/Interactionarea/interaction_area.tscn" id="3_5jwbp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odcbg"]
+atlas = ExtResource("1_fom2c")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rek7g"]
+atlas = ExtResource("1_fom2c")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6w72"]
+atlas = ExtResource("1_fom2c")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5ldi"]
+atlas = ExtResource("1_fom2c")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_urpdx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odcbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rek7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6w72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5ldi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7s6n"]
+size = Vector2(59, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23ocd"]
+
+[node name="Node" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_urpdx")
+frame_progress = 0.58216
+script = ExtResource("2_ygntf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_r7s6n")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_5jwbp")]
+scale = Vector2(0.52, 0.600001)
+action_name = "collect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+scale = Vector2(5.76, 4)
+shape = SubResource("RectangleShape2D_23ocd")
+
+[connection signal="tree_entered" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_tree_entered"]

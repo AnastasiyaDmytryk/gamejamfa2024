@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyvn0ooowqg5y"]
+[gd_scene load_steps=14 format=3 uid="uid://cdq23kspalkuw"]
 
 [ext_resource type="Script" path="res://Scripts/power_up_red.gd" id="1_bolxh"]
 [ext_resource type="Texture2D" uid="uid://d3ws30pipieds" path="res://Art/pixilart-sprite.png" id="2_63uhb"]
@@ -83,7 +83,7 @@ script = ExtResource("1_bolxh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ks4lx")
-frame_progress = 0.922839
+frame_progress = 0.0363071
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2.32, 2.04)

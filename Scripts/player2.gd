@@ -1,9 +1,13 @@
 extends CharacterBody2D
 
+class_name Player
+
+signal healthChanged
 
 @export var speed: float = 200
 @export var attack_duration: float = 0.5  
-@export var knowckbackPower: int = 1500
+#@onready var hurtBox = $hurtBox
+#@onready var hurtTimer = $hurtTimer
 
 var direction: Vector2 = Vector2()
 var is_attacking: bool = false
@@ -12,6 +16,12 @@ var attack_timer: float = 0.0
 
 
 @onready var animated_sprite = $AnimatedSprite2D
+
+@export var maxHealth = 30; 
+@onready var currentHealth: int = maxHealth
+@export var knowckbackPower: int = 1500
+
+var isHurt: bool = false
 
 func read_input():
 	if is_attacking:
@@ -56,6 +66,23 @@ func handle_attack(delta):
 		animated_sprite.play("attack") 
 		velocity = Vector2()  
 
+func _process(delta: float) -> void:
+	status = GlobalRooms.reswapn
+
+func hurtByEnemy(area):
+	currentHealth -= 10
+	if currentHealth < 0: 
+		currentHealth = maxHealth
+			
+	isHurt = true 
+	healthChanged.emit()
+		
+	knockback(area.get_parent().velocity)
+#	hurtTimer.start()
+#	await hurtTimer.timeout
+	isHurt = false
+	
+
 func knockback(enemyVelocity: Vector2):
 	var knockbackDirection = (enemyVelocity - velocity).normalized() * knowckbackPower
 	velocity = knockbackDirection
@@ -73,3 +100,12 @@ func _physics_process(delta: float):
 		read_input()  
 
 	move_and_slide()
+
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	if area.name == "hitBox":
+		currentHealth -= 1;
+		healthChanged.emit()
+		knockback(area.get_parent().velocity)
+		print_debug(currentHealth)
+		#print_debug(area.get_parent().name)

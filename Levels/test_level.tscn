@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://clkwjxhoyleqj"]
+[gd_scene load_steps=19 format=4 uid="uid://clkwjxhoyleqj"]
 
 [ext_resource type="Texture2D" uid="uid://b4vgj6w6j2tm6" path="res://Art/Other/TX Tileset Grass.png" id="1_uwadr"]
 [ext_resource type="PackedScene" uid="uid://tx3t7df4atb4" path="res://Levels/player.tscn" id="2_m62xx"]

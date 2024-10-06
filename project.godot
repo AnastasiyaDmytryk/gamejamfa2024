@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameJamFa2024"
-run/main_scene="res://Levels/test_level.tscn"
+run/main_scene="res://Levels/Menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 <<<<<<<HEADrun/main_scene="res://Terrains/Room0.tscn"
@@ -20,7 +20,9 @@ config/icon="res://icon.svg"
 
 globalRooms="*res://Scripts/globalRooms.gd"
 GlobalRooms="*res://Scripts/globalRooms.gd"
+
 InteractionManager="*res://Collectibles/Interactionarea/interactionManager.tscn"
+
 
 [editor]
 
